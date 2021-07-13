@@ -19,5 +19,3 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RniApi->plmn_info_get: %s\n" % e)
-
-heeeheee
