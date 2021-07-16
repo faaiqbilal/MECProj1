@@ -16,8 +16,6 @@ app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of A
 
 try:
     api_response = api_instance.rab_info_get()
-    # pprint(api_response)
-    loaded = json.load(api_response)
-    print(type(loaded))
+    pprint(api_response.cell_user_info)
 except ApiException as e:
     print("Exception when calling RniApi->rab_info_get: %s\n" % e)

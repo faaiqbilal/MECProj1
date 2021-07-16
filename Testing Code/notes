@@ -1,1 +1,6 @@
 Leaving out plmn info because it does not really give us anything.
+
+PS: the files in the models folder are very useful at getting functions for stuff
+The objects returned are not Json or anything, but python classes. 
+They have getters and setters in their class files (models) that can be used for info.
+
