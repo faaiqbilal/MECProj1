@@ -14,8 +14,6 @@ configuration.host = "https://try-mec.etsi.org/sbxv5o84at/rni/v2"
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
 app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of Application instance identifiers
 
- 
-
 # RAB INFO STUFF #
 try:
     api_response = api_instance.rab_info_get() # returns RabInfo object

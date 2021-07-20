@@ -1,7 +1,10 @@
 ✔ Separate every element for one quantity, save in different variables @done(21-07-18 06:39)
 ☐ Add this code to a generalized script
+☐ Find out time interval between updates on the server side
+☐ Convert the dc_script.py file to use threading to avoid delays, and make it repeat sending requests
 ☐ In this new script, run everything in separate threads
 ☐ Set up and install location api and wlan api
+
 
 IMMEDIATE TASKS
 ☐ Test whether the created lists are showing proper content
