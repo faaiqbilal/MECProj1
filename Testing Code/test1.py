@@ -8,13 +8,39 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxhhehdpx/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxzjce64p/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
 app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of Application instance identifiers
 
+body = {
+  "subscriptionType": "CellChangeSubscription",
+  "callbackReference": "/rni/v2/subscriptions",
+  "filterCriteriaAssocHo": {
+    "associateId": [
+      {
+        "type": 1,
+        "value": "10.100.0.1"
+      }
+    ],
+    "ecgi": [
+      {
+        "plmn": {
+          "mnc": "001",
+          "mcc": "001"
+        },
+        "cellId": "1010101"
+      }
+    ]
+  }
+}
 
+# api_response = api_instance.subscriptions_post(body)
+# pprint(api_response)
+
+api_response = api_instance.subscriptions_get(subscription_id)
+pprint(api_response)
 
 
 '''
