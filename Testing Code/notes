@@ -5,3 +5,6 @@ The objects returned are not Json or anything, but python classes.
 They have getters and setters in their class files (models) that can be used for info.
 
 see the getters with the @property decorator. calling will return the given property/object
+
+Layer 2 measurements do not appear to provide any useful information that can be used to create features
+

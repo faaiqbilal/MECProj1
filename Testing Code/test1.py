@@ -8,11 +8,21 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxv5o84at/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxpcv7cug/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
 app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of Application instance identifiers
+
+# LAYER 2 INFO STUFF #
+
+try:
+    api_response_l2 = api_instance.layer2_meas_info_get(app_ins_id = app_ins_id)
+    pprint(api_response_l2)
+except ApiException as e:
+    print("Exception when calling RniApi->layer2_meas_info_get: %s\n" % e)
+
+'''
 
 # RAB INFO STUFF #
 try:
@@ -54,3 +64,5 @@ try:
         cell_erab_qos_info_list.append(cell_erab_qos_info)
 except ApiException as e:
     print("Exception when calling RniApi->rab_info_get: %s\n" % e)
+
+'''
