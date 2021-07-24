@@ -8,12 +8,27 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxpcv7cug/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxhhehdpx/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
 app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of Application instance identifiers
 
+
+
+
+'''
+# S1-U bearer information #
+
+try:
+    api_response = api_instance.s1_bearer_info_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RniApi->s1_bearer_info_get: %s\n" % e)
+
+'''
+
+'''
 # LAYER 2 INFO STUFF #
 
 try:
@@ -21,6 +36,8 @@ try:
     pprint(api_response_l2)
 except ApiException as e:
     print("Exception when calling RniApi->layer2_meas_info_get: %s\n" % e)
+
+'''
 
 '''
 

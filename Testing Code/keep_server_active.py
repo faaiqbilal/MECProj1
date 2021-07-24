@@ -9,7 +9,7 @@ from time import sleep
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxpcv7cug/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxhhehdpx/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))

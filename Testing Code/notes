@@ -8,3 +8,4 @@ see the getters with the @property decorator. calling will return the given prop
 
 Layer 2 measurements do not appear to provide any useful information that can be used to create features
 
+S1 bearer info stuff has not been implemented in the API yet.
