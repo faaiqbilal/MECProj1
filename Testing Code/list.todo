@@ -1,5 +1,5 @@
 ✔ Separate every element for one quantity, save in different variables @done(21-07-18 06:39)
-☐ Add this code to a generalized script
+✔ Add this code to a generalized script @done(21-07-27 08:56) Previous code has been merged, subscription work is yet to be added
 ☐ Find out time interval between updates on the server side
 ☐ Convert the dc_script.py file to use threading to avoid delays, and make it repeat sending requests
 ✘ In this new script, run everything in separate threads @cancelled(21-07-27 06:27) I am not sure if this will be necessary, I will probably have to run separate requests in separate threads

@@ -8,12 +8,15 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxkhy32c3/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxcalr059/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
 app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of Application instance identifiers
 
+# for now it seems that body structure is best off made like this, the functions dedicated to them can also be used but require the
+# same information to be passed in as variables anyway, this appears to be more convenient
+# Disregarding performance difference, it might take longer to process strings but that doesn't really matter for our use + no way to test
 body = {
   "subscriptionType": "CellChangeSubscription",
   "callbackReference": "/subscriptions/test1",
@@ -42,9 +45,9 @@ body = {
 # body = swagger_client.CellChangeSubscription(callback_reference="/rni/v2/subscriptions/test2")
 # body = swagger_client.InlineSubscription()
 
-subscription_id = 2
-api_response = api_instance.subscriptions_delete(subscription_id)
-pprint(api_response)
+# subscription_id = 2
+# api_response = api_instance.subscriptions_delete(subscription_id)
+# pprint(api_response)
 
 ''' Working subscription code 
 
@@ -61,9 +64,9 @@ pprint(api_response)
 # pprint(api_response)
 
 
-# subscription_id = 2
-# api_response = api_instance.subscriptions_get(subscription_id) # this works for now
-# pprint(api_response)
+subscription_id = '1' # parsed as string, regardless of whether it is entered as int or str
+api_response = api_instance.subscriptions_get(subscription_id) # this works for now
+pprint(api_response)
 
 
 '''
