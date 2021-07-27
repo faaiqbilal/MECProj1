@@ -8,44 +8,61 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbx4v7mn4i/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxkhy32c3/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
 app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of Application instance identifiers
 
-# body = {
-#   "subscriptionType": "CellChangeSubscription",
-#   "callbackReference": "/rni/v2/subscriptions/test1",
-#   "filterCriteriaAssocHo": {
-#     "associateId": [
-#       {
-#         "type": 1,
-#         "value": "10.100.0.1"
-#       }
-#     ],
-#     "ecgi": [
-#       {
-#         "plmn": {
-#           "mnc": "001",
-#           "mcc": "001"
-#         },
-#         "cellId": "1010101"
-#       }
-#     ]
-#   }
-# }
+body = {
+  "subscriptionType": "CellChangeSubscription",
+  "callbackReference": "/subscriptions/test1",
+  "filterCriteriaAssocHo": {
+    "associateId": [
+      {
+        "type": 1,
+        "value": "10.100.0.1"
+      }
+    ],
+    "ecgi": [
+      {
+        "plmn": {
+          "mnc": "001",
+          "mcc": "001"
+        },
+        "cellId": "1010101"
+      }
+    ]
+  }
+}
 
 # api_response = api_instance.subscriptions_post(body)
 # pprint(api_response)
 
 # body = swagger_client.CellChangeSubscription(callback_reference="/rni/v2/subscriptions/test2")
-body = swagger_client.InlineSubscription()
-api_response = api_instance.subscriptions_post(body)
+# body = swagger_client.InlineSubscription()
+
+subscription_id = 2
+api_response = api_instance.subscriptions_delete(subscription_id)
 pprint(api_response)
 
-# subscription_id = 3
-# api_response = api_instance.subscriptions_get(subscription_id)
+''' Working subscription code 
+
+# api_response = api_instance.subscriptions_post(body) # this creates the subscription, and the one below it appears to work by subscription_id
+# pprint(api_response)
+
+subscription_id = 1
+api_response = api_instance.subscriptions_get(subscription_id) # this works for now
+pprint(api_response)
+
+'''
+
+# api_response = api_instance.subscriptions_post(body) # this creates the subscription, and the one below it appears to work by subscription_id
+# pprint(api_response)
+
+
+# subscription_id = 2
+# api_response = api_instance.subscriptions_get(subscription_id) # this works for now
 # pprint(api_response)
 
 

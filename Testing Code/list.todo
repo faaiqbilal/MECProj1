@@ -2,12 +2,20 @@
 ☐ Add this code to a generalized script
 ☐ Find out time interval between updates on the server side
 ☐ Convert the dc_script.py file to use threading to avoid delays, and make it repeat sending requests
-☐ In this new script, run everything in separate threads
+✘ In this new script, run everything in separate threads @cancelled(21-07-27 06:27) I am not sure if this will be necessary, I will probably have to run separate requests in separate threads
 ☐ Set up and install location api and wlan api
+☐ Meet to discuss how to make features out of all this info that has been extracted
 
 
 IMMEDIATE TASKS
 ☐ Test whether the created lists are showing proper content
 ☐ Add to larger main script 
 ☐ Send query for all the terms which need clarification 
-☐ Repeat the process for layer 2 measurements
+✔ Repeat the process for layer 2 measurements @done(21-07-27 06:25) Finding: layer 2 measurements don't really provide anything useful
+✔ S1 bearer info findings @done(21-07-27 06:26) Not implemented yet, so can't get that info
+
+
+
+PS: 
+    Most stuff/findings are being added to the notes.txt if I can't make tasks out of them, the todo helps keeping track of stuff that
+    needs to be completed

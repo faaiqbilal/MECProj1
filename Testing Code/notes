@@ -9,3 +9,8 @@ see the getters with the @property decorator. calling will return the given prop
 Layer 2 measurements do not appear to provide any useful information that can be used to create features
 
 S1 bearer info stuff has not been implemented in the API yet.
+
+Delete subscription func does not return a response.
+
+The id is incremented every time a subscription is requested, so we need a system to work with the callback reference instead.
+
