@@ -15,6 +15,12 @@ IMMEDIATE TASKS
 ✔ S1 bearer info findings @done(21-07-27 06:26) Not implemented yet, so can't get that info
 
 
+CURRENT STATUS:
+    Working on getting subscriptions working
+    The callback reference issue needs to be resolved
+    I don't understand how to route the communication back to my computer without providing an IP address
+    and a port to listen to
+    I was hoping that this would be a part of the API and would not need to be implemented separately
 
 PS: 
     Most stuff/findings are being added to the notes.txt if I can't make tasks out of them, the todo helps keeping track of stuff that

@@ -6,6 +6,14 @@ They have getters and setters in their class files (models) that can be used for
 
 see the getters with the @property decorator. calling will return the given property/object
 
+questions to ask:
+1. how are we making the identifier for our connection/object. there is stuff like 
+
+Findings:
+
+The MEC sandbox is currently only using qci values of 80. Source MEC wiki
+Hence qci values should NOT be used towards feature designing.
+
 Layer 2 measurements do not appear to provide any useful information that can be used to create features
 
 S1 bearer info stuff has not been implemented in the API yet.
@@ -13,4 +21,11 @@ S1 bearer info stuff has not been implemented in the API yet.
 Delete subscription func does not return a response.
 
 The id is incremented every time a subscription is requested, so we need a system to work with the callback reference instead.
+
+The cell change subscription only appears to work for 4G cells
+The RAB Establishment method and the RAB release method also only work with 4G networks
+Details for each method can be found here: https://mecwiki.etsi.org/index.php?title=MEC_Sandbox_Help#MEC012_-_Radio_Network_Information_Service_.28RNIS.29
+
+The Cell Change notification does not appear to be too important anyway. It does not return any 
+useful information, only informs when a cell tower has been changed
 

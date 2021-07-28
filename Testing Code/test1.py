@@ -8,7 +8,7 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxcalr059/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxrrso44a/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
@@ -17,9 +17,13 @@ app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of A
 # for now it seems that body structure is best off made like this, the functions dedicated to them can also be used but require the
 # same information to be passed in as variables anyway, this appears to be more convenient
 # Disregarding performance difference, it might take longer to process strings but that doesn't really matter for our use + no way to test
-body = {
+
+# Cell Change Subscription body parameter
+# callbackreference needs to be changed
+
+cell_change_body = {
   "subscriptionType": "CellChangeSubscription",
-  "callbackReference": "/subscriptions/test1",
+  "callbackReference": "https://localhost/rni/v2/subscriptions/api1",
   "filterCriteriaAssocHo": {
     "associateId": [
       {
@@ -33,17 +37,51 @@ body = {
           "mnc": "001",
           "mcc": "001"
         },
-        "cellId": "1010101"
+        "cellId": "8080808"
       }
     ]
   }
 }
 
-# api_response = api_instance.subscriptions_post(body)
+# RAB establishment subscription body
+
+rab_est_body = {
+  "subscriptionType": "RabEstSubscription",
+  "callbackReference": "http://my.callback.com/rni/rabEst",
+  "filterCriteriaQci": {
+    "ecgi": [
+      {
+        "plmn": {
+          "mnc": "001",
+          "mcc": "001"
+        },
+        "cellId": "1010101"
+      }
+    ],
+    "qci": 80
+  }
+}
+
+# Nr Measurement Report ue Subscription body
+
+# use the documentation to flesh this out
+
+# nr_meas_sub_body = {
+#   "subscription_type": "NrMeasRepUeSubscription",
+#   "callbackReference": "anythingForNow"
+#   "filterCriteriaNrMrs": {
+
+#     "nrcgi"
+#   }
+# }
+
+nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything")
+
+# api_response = api_instance.subscriptions_post(cell_change_body)
 # pprint(api_response)
 
-# body = swagger_client.CellChangeSubscription(callback_reference="/rni/v2/subscriptions/test2")
-# body = swagger_client.InlineSubscription()
+# api_response = api_instance.subscriptions_post(rab_est_body)
+# pprint(api_response)
 
 # subscription_id = 2
 # api_response = api_instance.subscriptions_delete(subscription_id)
@@ -64,9 +102,10 @@ pprint(api_response)
 # pprint(api_response)
 
 
-subscription_id = '1' # parsed as string, regardless of whether it is entered as int or str
-api_response = api_instance.subscriptions_get(subscription_id) # this works for now
-pprint(api_response)
+
+# subscription_id = '3' # parsed as string, regardless of whether it is entered as int or str
+# api_response = api_instance.subscriptions_get(subscription_id) # this works for now
+# pprint(api_response)
 
 
 '''
