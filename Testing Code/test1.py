@@ -8,7 +8,7 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxrrso44a/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxgsytixg/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
@@ -75,7 +75,7 @@ rab_est_body = {
 #   }
 # }
 
-nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything")
+# nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything")
 
 # api_response = api_instance.subscriptions_post(cell_change_body)
 # pprint(api_response)
@@ -118,6 +118,12 @@ except ApiException as e:
     print("Exception when calling RniApi->s1_bearer_info_get: %s\n" % e)
 
 '''
+try:
+    api_response_l2 = api_instance.layer2_meas_info_get(app_ins_id = app_ins_id)
+    pprint(api_response_l2)
+except ApiException as e:
+    print("Exception when calling RniApi->layer2_meas_info_get: %s\n" % e)
+
 
 '''
 # LAYER 2 INFO STUFF #
