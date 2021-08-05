@@ -8,7 +8,7 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxgsytixg/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxipycl1a/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
@@ -23,7 +23,7 @@ app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of A
 
 cell_change_body = {
   "subscriptionType": "CellChangeSubscription",
-  "callbackReference": "https://localhost/rni/v2/subscriptions/api1",
+  "callbackReference": "http://185.233.18.22",
   "filterCriteriaAssocHo": {
     "associateId": [
       {
@@ -37,7 +37,7 @@ cell_change_body = {
           "mnc": "001",
           "mcc": "001"
         },
-        "cellId": "8080808"
+        "cellId": "2020202"
       }
     ]
   }
@@ -98,6 +98,7 @@ pprint(api_response)
 
 '''
 
+
 # api_response = api_instance.subscriptions_post(body) # this creates the subscription, and the one below it appears to work by subscription_id
 # pprint(api_response)
 
@@ -118,11 +119,11 @@ except ApiException as e:
     print("Exception when calling RniApi->s1_bearer_info_get: %s\n" % e)
 
 '''
-try:
-    api_response_l2 = api_instance.layer2_meas_info_get(app_ins_id = app_ins_id)
-    pprint(api_response_l2)
-except ApiException as e:
-    print("Exception when calling RniApi->layer2_meas_info_get: %s\n" % e)
+# try:
+#     api_response_l2 = api_instance.layer2_meas_info_get(app_ins_id = app_ins_id)
+#     pprint(api_response_l2)
+# except ApiException as e:
+#     print("Exception when calling RniApi->layer2_meas_info_get: %s\n" % e)
 
 
 '''
