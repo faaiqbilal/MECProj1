@@ -14,7 +14,9 @@ IMMEDIATE TASKS
 ✔ Repeat the process for layer 2 measurements @done(21-07-27 06:25) Finding: layer 2 measurements don't really provide anything useful
 ✔ S1 bearer info findings @done(21-07-27 06:26) Not implemented yet, so can't get that info
 ☐ probably need to host a server for callback reference problem, will try to get hosting instead of having to host locally
-☐ Make query for above problem (for self hosting, or direct IP address use) on stackoverflow
+✔ Make query for above problem (for self hosting, or direct IP address use) on stackoverflow @done(21-08-06 15:08)
+☐ suggested solution is port forwarding to be set up on the router, will need to see this
+☐ Can also try something like noip client
 ☐ Find out why layer 2 measurements come up empty - they are very important to us
 
 CURRENT STATUS:

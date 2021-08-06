@@ -68,14 +68,33 @@ rab_est_body = {
 
 # nr_meas_sub_body = {
 #   "subscription_type": "NrMeasRepUeSubscription",
-#   "callbackReference": "anythingForNow"
+#   "callbackReference": "anythingForNow",
 #   "filterCriteriaNrMrs": {
-
-#     "nrcgi"
+#     "nrcgi" : [
+#       {
+#         "plmn": {
+#           "mnc": "001",
+#           "mcc": "001"
+#         },
+#         "cellId": "808080808"
+#       }
+#     ]
 #   }
 # }
 
-# nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything")
+filter_criteria_nr_mrs = {
+  "associateId": [
+      {
+        "type": 1,
+        "value": "10.100.0.1"
+      }
+    ]
+  }
+
+nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything", filter_criteria_nr_mrs=filter_criteria_nr_mrs, subscription_type="NrMeasRepUeSubscription")
+
+api_response = api_instance.subscriptions_post(nr_meas_sub_body)
+pprint(api_response)
 
 # api_response = api_instance.subscriptions_post(cell_change_body)
 # pprint(api_response)
