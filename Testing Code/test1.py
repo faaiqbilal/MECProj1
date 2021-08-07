@@ -8,7 +8,7 @@ from pprint import pprint
 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbxipycl1a/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbx0y1jks0/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
@@ -91,9 +91,50 @@ filter_criteria_nr_mrs = {
     ]
   }
 
-nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything", filter_criteria_nr_mrs=filter_criteria_nr_mrs, subscription_type="NrMeasRepUeSubscription")
+# api_response = api_instance.subscriptions_delete(subscription_id=1)
+# pprint(api_response)
 
-api_response = api_instance.subscriptions_post(nr_meas_sub_body)
+# nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything", filter_criteria_nr_mrs=filter_criteria_nr_mrs, subscription_type="NrMeasRepUeSubscription")
+
+# api_response = api_instance.subscriptions_post(nr_meas_sub_body)
+# pprint(api_response)
+
+dl_gbr_prb_usage_cell = 56 # int | PRB usage for downlink GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+ul_gbr_prb_usage_cell = 56 # int | PRB usage for uplink GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+dl_nongbr_prb_usage_cell = 56 # int | PRB usage for downlink non-GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+ul_nongbr_prb_usage_cell = 56 # int | PRB usage for uplink non-GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+dl_total_prb_usage_cell = 56 # int | PRB usage for total downlink traffic in percentage as defined in ETSI TS 136 314 (optional)
+ul_total_prb_usage_cell = 56 # int | PRB usage for total uplink traffic in percentage as defined in ETSI TS 136 314 (optional)
+received_dedicated_preambles_cell = 56 # int | Received dedicated preambles in percentage as defined in ETSI TS 136 314 (optional)
+received_randomly_selected_preambles_low_range_cell = 56 # int | Received randomly selected preambles in the low range in percentage as defined in ETSI TS 136 314 (optional)
+received_randomly_selected_preambles_high_range_cell = 56 # int | Received rendomly selected preambles in the high range in percentage as defined in ETSI TS 136 314 (optional)
+number_of_active_ue_dl_gbr_cell = 56 # int | Number of active UEs with downlink GBR traffic as defined in ETSI TS 136 314 (optional)
+number_of_active_ue_ul_gbr_cell = 56 # int | Number of active UEs with uplink GBR traffic as defined in ETSI TS 136 314 (optional)
+number_of_active_ue_dl_nongbr_cell = 56 # int | Number of active UEs with downlink non-GBR traffic as defined in ETSI TS 136 314 (optional)
+number_of_active_ue_ul_nongbr_cell = 56 # int | Number of active UEs with uplink non-GBR traffic as defined in ETSI TS 136 314 (optional)
+dl_gbr_pdr_cell = 56 # int | Packet discard rate for downlink GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+ul_gbr_pdr_cell = 56 # int | Packet discard rate for uplink GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+dl_nongbr_pdr_cell = 56 # int | Packet discard rate for downlink non-GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+ul_nongbr_pdr_cell = 56 # int | Packet discard rate for uplink non-GBR traffic in percentage as defined in ETSI TS 136 314 (optional)
+dl_gbr_delay_ue = 56 # int | Packet delay of downlink GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+ul_gbr_delay_ue = 56 # int | Packet delay of uplink GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+dl_nongbr_delay_ue = 56 # int | Packet delay of downlink non-GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+ul_nongbr_delay_ue = 56 # int | Packet delay of uplink non-GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+dl_gbr_pdr_ue = 56 # int | Packet discard rate of downlink GBR traffic of a UE in percentage as defined in ETSI TS 136 314 (optional)
+ul_gbr_pdr_ue = 56 # int | Packet discard rate of uplink GBR traffic of a UE in percentage as defined in ETSI TS 136 314 (optional)
+dl_nongbr_pdr_ue = 56 # int | Packet discard rate of downlink non-GBR traffic of a UE in percentage as defined in ETSI TS 136 314 (optional)
+ul_nongbr_pdr_ue = 56 # int | Packet discard rate of uplink non-GBR traffic of a UE in percentage as defined in ETSI TS 136 314 (optional)
+dl_gbr_throughput_ue = 56 # int | Scheduled throughput of downlink GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+ul_gbr_throughput_ue = 56 # int | Scheduled throughput of uplink GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+dl_nongbr_throughput_ue = 56 # int | Scheduled throughput of downlink non-GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+ul_nongbr_throughput_ue = 56 # int | Scheduled throughput of uplink non-GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+dl_gbr_data_volume_ue = 56 # int | Data volume of downlink GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+ul_gbr_data_volume_ue = 56 # int | Data volume of uplink GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+dl_nongbr_data_volume_ue = 56 # int | Data volume of downlink non-GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+ul_nongbr_data_volume_ue = 56 # int | Data volume of uplink non-GBR traffic of a UE as defined in ETSI TS 136 314 (optional)
+
+
+api_response = api_instance.layer2_meas_info_get(app_ins_id=app_ins_id, dl_gbr_prb_usage_cell=dl_gbr_prb_usage_cell, ul_gbr_prb_usage_cell=ul_gbr_prb_usage_cell, dl_nongbr_prb_usage_cell=dl_nongbr_prb_usage_cell, ul_nongbr_prb_usage_cell=ul_nongbr_prb_usage_cell, dl_total_prb_usage_cell=dl_total_prb_usage_cell, ul_total_prb_usage_cell=ul_total_prb_usage_cell, received_dedicated_preambles_cell=received_dedicated_preambles_cell, received_randomly_selected_preambles_low_range_cell=received_randomly_selected_preambles_low_range_cell, received_randomly_selected_preambles_high_range_cell=received_randomly_selected_preambles_high_range_cell, number_of_active_ue_dl_gbr_cell=number_of_active_ue_dl_gbr_cell, number_of_active_ue_ul_gbr_cell=number_of_active_ue_ul_gbr_cell, number_of_active_ue_dl_nongbr_cell=number_of_active_ue_dl_nongbr_cell, number_of_active_ue_ul_nongbr_cell=number_of_active_ue_ul_nongbr_cell, dl_gbr_pdr_cell=dl_gbr_pdr_cell, ul_gbr_pdr_cell=ul_gbr_pdr_cell, dl_nongbr_pdr_cell=dl_nongbr_pdr_cell, ul_nongbr_pdr_cell=ul_nongbr_pdr_cell, dl_gbr_delay_ue=dl_gbr_delay_ue, ul_gbr_delay_ue=ul_gbr_delay_ue, dl_nongbr_delay_ue=dl_nongbr_delay_ue, ul_nongbr_delay_ue=ul_nongbr_delay_ue, dl_gbr_pdr_ue=dl_gbr_pdr_ue, ul_gbr_pdr_ue=ul_gbr_pdr_ue, dl_nongbr_pdr_ue=dl_nongbr_pdr_ue, ul_nongbr_pdr_ue=ul_nongbr_pdr_ue, dl_gbr_throughput_ue=dl_gbr_throughput_ue, ul_gbr_throughput_ue=ul_gbr_throughput_ue, dl_nongbr_throughput_ue=dl_nongbr_throughput_ue, ul_nongbr_throughput_ue=ul_nongbr_throughput_ue, dl_gbr_data_volume_ue=dl_gbr_data_volume_ue, ul_gbr_data_volume_ue=ul_gbr_data_volume_ue, dl_nongbr_data_volume_ue=dl_nongbr_data_volume_ue, ul_nongbr_data_volume_ue=ul_nongbr_data_volume_ue)
 pprint(api_response)
 
 # api_response = api_instance.subscriptions_post(cell_change_body)
