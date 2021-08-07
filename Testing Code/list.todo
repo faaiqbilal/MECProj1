@@ -17,7 +17,7 @@ IMMEDIATE TASKS
 ✔ Make query for above problem (for self hosting, or direct IP address use) on stackoverflow @done(21-08-06 15:08)
 ☐ suggested solution is port forwarding to be set up on the router, will need to see this. supporting link: https://www.lifewire.com/how-to-port-forward-4163829
 ☐ Can also try something like noip client
-☐ Find out why layer 2 measurements come up empty - they are very important to us
+✔ Find out why layer 2 measurements come up empty - they are very important to us @done(21-08-07 18:15) Layer 2 measurements are simply not supported by the MEC Sandbox
 
 CURRENT STATUS:
     Working on getting subscriptions working
