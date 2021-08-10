@@ -11,7 +11,7 @@ from pprint import pprint
 # The configuration host is the 
 
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbx4pujfgj/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbxk90259d/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
@@ -21,8 +21,9 @@ app_ins_id = ['10.10.0.1', '10.100.0.1'] # list[str] | Comma separated list of A
 # same information to be passed in as variables anyway, this appears to be more convenient
 # Disregarding performance difference, it might take longer to process strings but that doesn't really matter for our use + no way to test
 
-# Cell Change Subscription body parameter
+
 # callbackreference needs to be changed
+# Cell Change Subscription body
 
 cell_change_body = {
   "subscriptionType": "CellChangeSubscription",
@@ -65,25 +66,17 @@ rab_est_body = {
   }
 }
 
+# api_response = api_instance.subscriptions_post(cell_change_body)
+# pprint(api_response)
+
+# api_response = api_instance.subscriptions_post(rab_est_body)
+# pprint(api_response)
+
+
+'''
+New Radio Measurement Report (5g only)
+
 # Nr Measurement Report ue Subscription body
-
-# use the documentation to flesh this out
-
-# nr_meas_sub_body = {
-#   "subscription_type": "NrMeasRepUeSubscription",
-#   "callbackReference": "anythingForNow",
-#   "filterCriteriaNrMrs": {
-#     "nrcgi" : [
-#       {
-#         "plmn": {
-#           "mnc": "001",
-#           "mcc": "001"
-#         },
-#         "cellId": "808080808"
-#       }
-#     ]
-#   }
-# }
 
 filter_criteria_nr_mrs = {
   "associateId": [
@@ -95,14 +88,17 @@ filter_criteria_nr_mrs = {
   }
 
 
-# api_response = api_instance.subscriptions_delete(subscription_id=1)
-# pprint(api_response)
-
 nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything", filter_criteria_nr_mrs=filter_criteria_nr_mrs, subscription_type="NrMeasRepUeSubscription")
 
-# api_response = api_instance.subscriptions_post(nr_meas_sub_body)
-# pprint(api_response)
+api_response = api_instance.subscriptions_post(nr_meas_sub_body)
+pprint(api_response)
 
+'''
+
+'''
+Measurement Report (4g+5g) Subscription Request
+
+# change the value to add another device to the list
 filter_criteria_assoc_tri = {
   "associateId": [
       {
@@ -112,23 +108,24 @@ filter_criteria_assoc_tri = {
     ]
   }
 
-meas_sub_body = swagger_client.MeasRepUeSubscription(callback_reference="http://185.233.18.22:50001", filter_criteria_assoc_tri=filter_criteria_assoc_tri, subscription_type="MeasRepUeSubscription")
+
+meas_sub_body = swagger_client.MeasRepUeSubscription(callback_reference="anything2", filter_criteria_assoc_tri=filter_criteria_assoc_tri, subscription_type="MeasRepUeSubscription")
 
 api_response = api_instance.subscriptions_post(meas_sub_body)
 pprint(api_response)
 
-# api_response = api_instance.layer2_meas_info_get()
-# pprint(api_response)
+'''
 
-# api_response = api_instance.subscriptions_post(cell_change_body)
-# pprint(api_response)
 
-# api_response = api_instance.subscriptions_post(rab_est_body)
-# pprint(api_response)
+'''
 
-# subscription_id = 2
-# api_response = api_instance.subscriptions_delete(subscription_id)
-# pprint(api_response)
+# Subscription Delete Code
+# In this case, the subscription id is an ID that is returned as the last part of the URI chosen by the API (the part after the final '/')
+
+api_response = api_instance.subscriptions_delete(subscription_id=1)
+pprint(api_response)
+
+'''
 
 ''' Working subscription code 
 
@@ -162,12 +159,6 @@ except ApiException as e:
     print("Exception when calling RniApi->s1_bearer_info_get: %s\n" % e)
 
 '''
-# try:
-#     api_response_l2 = api_instance.layer2_meas_info_get(app_ins_id = app_ins_id)
-#     pprint(api_response_l2)
-# except ApiException as e:
-#     print("Exception when calling RniApi->layer2_meas_info_get: %s\n" % e)
-
 
 '''
 # LAYER 2 INFO STUFF #
