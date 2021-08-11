@@ -94,13 +94,12 @@ filter_criteria_nr_mrs = {
 # api_response = api_instance.subscriptions_delete(subscription_id=1)
 # pprint(api_response)
 
-# nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything", filter_criteria_nr_mrs=filter_criteria_nr_mrs, subscription_type="NrMeasRepUeSubscription")
 
 # api_response = api_instance.subscriptions_post(nr_meas_sub_body)
 # pprint(api_response)
 
-api_response = api_instance.layer2_meas_info_get()
-pprint(api_response)
+# api_response = api_instance.layer2_meas_info_get()
+# pprint(api_response)
 
 # api_response = api_instance.subscriptions_post(cell_change_body)
 # pprint(api_response)
