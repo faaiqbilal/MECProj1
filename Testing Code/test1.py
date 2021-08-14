@@ -7,8 +7,11 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 
+# Needed for the configuration of the Sandbox
+# The configuration host is the 
+
 configuration = Configuration()
-configuration.host = "https://try-mec.etsi.org/sbx0y1jks0/rni/v2"
+configuration.host = "https://try-mec.etsi.org/sbx4pujfgj/rni/v2"
 
 # create an instance of the API class
 api_instance = swagger_client.RniApi(swagger_client.ApiClient(configuration))
@@ -91,12 +94,36 @@ filter_criteria_nr_mrs = {
     ]
   }
 
+
 # api_response = api_instance.subscriptions_delete(subscription_id=1)
 # pprint(api_response)
 
+<<<<<<< HEAD
+=======
+nr_meas_sub_body = swagger_client.NrMeasRepUeSubscription(callback_reference="anything", filter_criteria_nr_mrs=filter_criteria_nr_mrs, subscription_type="NrMeasRepUeSubscription")
+>>>>>>> 0285b4fbcf705b2cd557b29ae5556b4cee95fb48
 
 # api_response = api_instance.subscriptions_post(nr_meas_sub_body)
 # pprint(api_response)
+
+<<<<<<< HEAD
+# api_response = api_instance.layer2_meas_info_get()
+# pprint(api_response)
+=======
+filter_criteria_assoc_tri = {
+  "associateId": [
+      {
+        "type": 1,
+        "value": "10.100.0.1"
+      }
+    ]
+  }
+
+meas_sub_body = swagger_client.MeasRepUeSubscription(callback_reference="http://185.233.18.22:50001", filter_criteria_assoc_tri=filter_criteria_assoc_tri, subscription_type="MeasRepUeSubscription")
+
+api_response = api_instance.subscriptions_post(meas_sub_body)
+pprint(api_response)
+>>>>>>> 0285b4fbcf705b2cd557b29ae5556b4cee95fb48
 
 # api_response = api_instance.layer2_meas_info_get()
 # pprint(api_response)
