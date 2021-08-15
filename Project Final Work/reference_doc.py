@@ -142,8 +142,6 @@ pprint(api_response)
 # api_response = api_instance.subscriptions_post(body) # this creates the subscription, and the one below it appears to work by subscription_id
 # pprint(api_response)
 
-
-
 # subscription_id = '3' # parsed as string, regardless of whether it is entered as int or str
 # api_response = api_instance.subscriptions_get(subscription_id) # this works for now
 # pprint(api_response)
